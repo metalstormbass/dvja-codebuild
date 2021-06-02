@@ -1,13 +1,13 @@
 version: 0.2
 
 phases:
-  setup: 
+  build: 
     commands:
       - npm install -g snyk
       - snyk auth $SNYK_TOKEN
       - snyk test
       - snyk code test
-  build:
+  install:
     commands:
       - echo Build started on `date`
       - mvn clean package
