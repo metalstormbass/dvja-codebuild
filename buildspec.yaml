@@ -1,0 +1,20 @@
+version: 0.2
+
+phases:
+  setup: 
+    commands:
+      - npm install -g snyk
+      - snyk auth $SNYK_TOKEN
+  snyk_sca_test:
+    commands:
+      - snyk test
+  snyk_code_test:
+    commands:
+      - snyk code test
+  build:
+    commands:
+      - echo Build started on `date`
+      - mvn clean package
+artifacts:
+  files:
+    - target/dvja-1.0-SNAPSHOT.war
