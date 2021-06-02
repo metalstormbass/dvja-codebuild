@@ -5,8 +5,9 @@ phases:
     commands:
       - npm install -g snyk
       - snyk auth $SNYK_TOKEN
-      - snyk test
-      - snyk code test
+     # Snyk test -- Ignore Exit codes for demonstration 
+      - snyk test --severity-threshold=high --fail-on=upgradable || true
+      - snyk code test || true
       - snyk monitor
   build:
     commands:
