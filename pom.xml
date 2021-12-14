@@ -13,10 +13,16 @@
         <log4j2.version>2.3</log4j2.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>3.0.5.RELEASE</spring.version>
+   	<log4j2-slf4j-impl.version>2.11.0</log4j2-slf4j-impl.version>
     </properties>
 
     <dependencies>
-
+          <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>${log4j2-slf4j-impl.version}</version>
+        </dependency>  
+      
         <dependency>
             <groupId>org.apache.struts</groupId>
             <artifactId>struts2-core</artifactId>
